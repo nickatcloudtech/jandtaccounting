@@ -1,45 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F5F6F5;
+  color: #1A2A44;
+  line-height: 1.6;
 }
+
+.navbar {
+  background-color: #1A2A44;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
 .navbar-brand {
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #D4A017 !important;
 }
+
 .navbar-dark .navbar-nav .nav-link {
-  color: #ffffff;
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
+
+.navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-  font-weight: bold;
-  border-bottom: 2px solid #d4a017;
+  color: #D4A017;
+  border-bottom: 2px solid #D4A017;
 }
+
+.dropdown-menu {
+  background-color: #1A2A44;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+.dropdown-item:hover {
+  background-color: #D4A017;
+  color: #1A2A44;
+}
+
 .jumbotron {
-  background-color: #003087;
-  color: white;
-  padding: 2rem;
-  border-radius: 0.5rem;
+  background-color: #1A2A44;
+  color: #FFFFFF;
+  padding: 3rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease-in;
 }
+
 .btn-primary {
-  background-color: #d4a017;
-  border-color: #d4a017;
+  background-color: #D4A017;
+  border-color: #D4A017;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .btn-primary:hover {
-  background-color: #b38e14;
-  border-color: #b38e14;
+  background-color: #B38E14;
+  border-color: #B38E14;
+  transform: translateY(-2px);
 }
+
 .card {
-  transition: transform 0.2s;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
-  transform: scale(1.02);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
+
+.card-title {
+  font-weight: 600;
+  color: #1A2A44;
+}
+
+.accordion-button {
+  font-weight: 600;
+  color: #1A2A44;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #F5F6F5;
+  color: #D4A017;
+}
+
+footer {
+  background-color: #1A2A44;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #D4A017;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #FFFFFF;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  animation: fadeIn 1s ease-in;
+}
+
 @media (max-width: 576px) {
   .container {
     padding: 1rem;
   }
   .jumbotron {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .nav-link {
+    font-size: 0.9rem;
   }
   .card {
     margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1100px;
   }
 }
