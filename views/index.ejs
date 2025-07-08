@@ -19,22 +19,14 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link <%= active === 'homepage' ? 'active' : '' %>" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link <%= active === 'about' ? 'active' : '' %>" href="/about">About</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle <%= active === 'services' ? 'active' : '' %>" href="/services" data-bs-toggle="dropdown">Services</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/services#accounting">Accounting</a></li>
-              <li><a class="dropdown-item" href="/services#taxes">Taxes</a></li>
-              <li><a class="dropdown-item" href="/services#business-startup">Business Start-up</a></li>
-              <li><a class="dropdown-item" href="/services#consulting">Consulting</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link <%= active === 'services' ? 'active' : '' %>" href="/services">Services</a></li>
           <li class="nav-item"><a class="nav-link <%= active === 'classes' ? 'active' : '' %>" href="/classes">Classes</a></li>
           <li class="nav-item"><a class="nav-link <%= active === 'forms' ? 'active' : '' %>" href="/forms">Forms</a></li>
           <li class="nav-item"><a class="nav-link <%= active === 'news' ? 'active' : '' %>" href="/news">News</a></li>
           <li class="nav-item"><a class="nav-link <%= active === 'faq' ? 'active' : '' %>" href="/faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link <%= active === 'contact' ? 'active' : '' %>" href="/contact">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="https://www.irs.gov">IRS</a></li>
-          <li class="nav-item"><a class="nav-link" href="<%= content.contact.calendly %>">Tax Dome</a></li>
+          <li class="nav-item"><a class="nav-link" href="<%= content.contact.calendly %>">TaxDome</a></li>
           <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="/contact">Free Consultation</a></li>
         </ul>
       </div>
@@ -42,10 +34,18 @@
   </nav>
   <div class="container mt-5">
     <% if (active === 'homepage') { %>
-      <div class="jumbotron text-center">
-        <h1><%= content.homepage.tagline %></h1>
-        <p><%= content.homepage.intro %></p>
-        <a href="/contact" class="btn btn-primary"> <%= content.homepage.cta %></a>
+      <div class="position-relative mb-4">
+        <img src="<%= content.homepage.image %>" alt="J&T Accounting Team" class="img-fluid w-100" style="max-height: 400px; object-fit: cover;">
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+          <h2 class="fw-bold">J&T Accounting Services</h2>
+        </div>
+      </div>
+      <div class="text-center mb-4">
+        <img src="/US.jpg" alt="James and Tiffiny" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+      </div>
+      <div class="text-center">
+        <p class="lead"><%= content.homepage.intro %></p>
+        <a href="/contact" class="btn btn-primary mt-3"> <%= content.homepage.cta %></a>
       </div>
     <% } else if (active === 'about') { %>
       <h1>About Us</h1>
@@ -68,13 +68,14 @@
       </div>
     <% } else if (active === 'services') { %>
       <h1>Services</h1>
-      <div class="row">
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
         <% content.services.forEach(service => { %>
-          <div class="col-md-6 mb-3" id="<%= service.name.toLowerCase().replace(/ /g, '-') %>">
-            <div class="card">
-              <div class="card-body">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body text-center">
                 <h5 class="card-title"><%= service.name %></h5>
-                <p class="card-text"><%= service.description %></p>
+                <p class="card-text"><%= service.description.substring(0, 150) %>...</p>
+                <a href="/services#<%= service.name.toLowerCase().replace(/ /g, '-') %>" class="btn btn-primary">Learn More</a>
               </div>
             </div>
           </div>
@@ -181,7 +182,7 @@
       </div>
     <% } %>
   </div>
-  <footer class="bg-dark text-white text-center py-3 mt-5">
+  <footer class="bg-dark text-white text-center py-3 mt-auto" style="position: fixed; bottom: 0; width: 100%;">
     <p>© 2025 J&T Accounting Services, LLC. All rights reserved.</p>
     <p><a href="/privacy" class="text-white">Privacy Policy</a></p>
   </footer>
