@@ -74,7 +74,7 @@
             <div class="card h-100">
               <div class="card-body text-center">
                 <h5 class="card-title"><%= service.name %></h5>
-                <p class="card-text"><%= service.description.substring(0, 150) %>...</p>
+                <p class="card-text"><%= service.description %></p>
                 <a href="/services#<%= service.name.toLowerCase().replace(/ /g, '-') %>" class="btn btn-primary">Learn More</a>
               </div>
             </div>

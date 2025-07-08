@@ -19,11 +19,23 @@
       }
     ]
   },
- "services": [
-    { "name": "Accounting", "description": "An accountant is NOT a tax preparer..." },
-    { "name": "Taxes", "description": "We prepare and file federal and state tax returns..." },
-    { "name": "Business Start-up", "description": "Should I start a business?..." },
-    { "name": "Business Consulting", "description": "As a business owner sometimes, you feel alone..." }
+"services": [
+    {
+      "name": "Accounting",
+      "description": "An accountant is not a tax preparer, and a tax preparer is not an accountant. Fortunately for you, we are both accountants and tax preparers. This is extremely rare. An accountant's job is to organize all money in and out into the correct categories, which must balance in the end. Every penny needs to be accounted for, and that is what we do. Accounting must be completed before a business tax return can be started. We are QBO (QuickBooks Online) Pro Advisors and can help you set up an account and assist you throughout the year."
+    },
+    {
+      "name": "Taxes",
+      "description": "We prepare and file federal and state tax returns for C Corps, S Corps, Partnerships, Estates, Trusts, and individuals. We have legal authority to file in all 50 states and represent taxpayers if the need arises. An LLC is either a C Corp, S Corp, Partnership, or Sole Proprietorship. It is very important to know which you have, as the filing requirements are very different."
+    },
+    {
+      "name": "Business Start-up",
+      "description": "Should I start a business? Am I cut out for it? There are significant pros and cons to doing this. You must evaluate your personal strengths, weaknesses, and family life. If you decide to start a business, what entity should I choose? Before deciding, please consult a professional. This is not something you can decide by watching YouTube or other social media. The internet often leads people to the wrong decision. We will carefully evaluate your situation and advise on the pros and cons of each. Once the decision is made, we will help you set up the entity and guide you through the proper operation."
+    },
+    {
+      "name": "Business Consulting",
+      "description": "As a business owner, you sometimes feel alone. This is where we come in. We help analyze your business, assist you in making monetary decisions, and propel you forward so you can become successful. We understand that you can’t talk to your employees or family because they may not understand, lack the knowledge, or, honestly, may have their own agenda."
+    }
   ],
   "faq": [
     {
