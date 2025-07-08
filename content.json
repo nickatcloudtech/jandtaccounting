@@ -1,0 +1,110 @@
+{
+  "homepage": {
+    "tagline": "Expert Accounting & Tax Solutions",
+    "cta": "Free Consultation",
+    "intro": "Welcome to J & T Accounting Services, LLC. Your trusted partner for accounting and tax needs."
+  },
+  "about": {
+    "mission": "We provide personalized accounting and tax services, ensuring every client’s success.",
+    "history": "Founded in 2016 by James Beltrame and Tiffiny Trupe, J&T Accounting grew from a home-based practice to a remote firm in Utah. Starting at H&R Block, we built a client-focused practice, adapting to remote work during COVID to deliver the same personal attention.",
+    "team": [
+      {
+        "name": "James Beltrame",
+        "bio": "With over 25 years in the custom home industry as a master tradesman and Project Manager, James pivoted during the Great Recession, leveraging his business degree to become an IRS Enrolled Agent. After six tax seasons with H&R Block, he co-founded J&T Accounting, specializing in corporate returns and IRS representation."
+      },
+      {
+        "name": "Tiffiny Trupe",
+        "bio": "A mother of two and accountant by training, Tiffiny paused her career to raise her family. After her divorce, she re-entered the workforce via H&R Block, meeting James in 2016. As co-founder of J&T, she excels in teamwork, starting every tax return and ensuring client-focused solutions."
+      }
+    ]
+  },
+  "services": [
+    {
+      "name": "Accounting",
+      "description": "An accountant is NOT a tax preparer and a tax preparer is NOT an accountant. Fortunately for you, we are both accountants and tax preparers. This is extremely rare. An accountant’s job is to organize all money in and out into the correct categories which in the end needs to balance. Every penny needs to be accounted for and that is what we do. Accounting must be completed before a business tax return can be started. We are QBO (QuickBooks Online) Pro Advisors and can help you set up an account and assist you throughout the year."
+    },
+    {
+      "name": "Taxes",
+      "description": "We prepare and file federal and state tax returns for C Corps, S Corps, Partnerships, Estates and Trusts and individuals. We have legal authority to file in all 50 states and represent tax payers if the need arises. An LLC is either a C Corp, S Corp, Partnership or Sole Proprietorship. It’s very important to know which you have as the filing requirements are very different."
+    },
+    {
+      "name": "Business Start-up",
+      "description": "Should I start a business? Am I cut out for it? There are big pros and cons to doing this. You must evaluate your personal strengths, weaknesses and family life. If you decide to start a business…. what entity do I choose? Before deciding this PLEASE consult a professional. This is NOT something you can decide watching YouTube or other social media. The internet often leads people to the wrong decision. We will carefully evaluate your situation and advise on the pros and cons of each. Once the decision is made, we will help you set up the entity and guide you through the proper operation."
+    },
+    {
+      "name": "Business Consulting",
+      "description": "As a business owner sometimes, you feel alone. This is where we come in. We help analyze your business, help you make monetary decisions and help you propel forward so you can become successful. We get that you can’t talk to your employees or your family because they don’t understand or don’t have the knowledge or honestly may just have their own agenda."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Why do I owe penalties and interest on my tax bill, or get additional bills in the mail after I file?",
+      "answer": "Taxes are due when income is RECEIVED!! This is why taxes are always taken out of your paycheck on a regular basis. If you do not have taxes taken out…. Such as from self-employment or investments, then you must make quarterly estimated payments throughout the year. If you do NOT make proper estimated payments, the IRS and state tax agencies have the full legal right to access penalties for not doing so. Interest accrues when payments are not made by the due date (not including extensions). This includes payment dates for estimated quarterly payments as well."
+    },
+    {
+      "question": "How do I avoid penalties and interest on my income taxes?",
+      "answer": "Very simply…. pay all tax payments (including estimates) on time by the due date. Your total withholding or estimated tax must be either 100% of the prior years tax bill or 90% of your current tax bill. *For example, if your total federal tax liability on your 2023 return was $5,000, and your total tax liability in 2024 is $6,000, your 2024 withholding (or estimates paid) to avoid penalty must be $5,000. If your 2024 total tax liability is $4,500, then your minimum withholding would be $4,050. Anytime you owe more than $1,000 when you file, you can be subject to penalties unless these criteria are met."
+    },
+    {
+      "question": "I’m self-employed, what can I deduct?",
+      "answer": "Are you spending the money solely because you are self-employed? This is a start. For more detail, please see our Forms Library for a robust list of possible deductions and the explanations of each. These will vary based upon your business type. *Personal food is NEVER a deduction. A business meal is one shared by two or more people for the purpose of conducting business and is only 50% deductible. Meals or snacks provided to employees or staff can be 100% deductible if provided as a benefit to those individuals while they are working. (Coffee/Water Service, staff lunch during a meeting, etc.)"
+    },
+    {
+      "question": "Should I start an LLC or other entity?",
+      "answer": "Do NOT make this decision based on social media or internet research. PLEASE seek professional advice. There are major pros and cons on entity selection and choosing the wrong one in the beginning can have dire consequences. We can provide personal guidance on this subject for those with questions."
+    },
+    {
+      "question": "What is my filing status? (Single, Head of Household, Married Separate, Married Joint, or Surviving Spouse)",
+      "answer": "Single: Unmarried on the last day of the tax year. (December 31st). If you are legally married, but legally separated (In divorce proceedings) for at least the last six months of the year, you can be considered unmarried for tax purposes and file as single. Head of Household: Not married, but have a dependent child or dependent parent you care for and provide more than 50% support. ... [Full provided text]"
+    },
+    {
+      "question": "Does 'profit first' accounting work?",
+      "answer": "ABSOLUTELY NOT!! This is a scam and the easiest way to get yourself into debt and file for bankruptcy!! No one (including those who preach it) practices this in real life and succeed. ... [Full provided text]"
+    },
+    {
+      "question": "Will having a rental property save me on taxes?",
+      "answer": "Maybe…there are many factors that come into rental properties. There are absolutely NO guarantees of tax savings through losses. Please advise… this is a complicated subject that needs individual attention. ... [Full provided text]"
+    },
+    {
+      "question": "What kind of records do I need to keep for my business?",
+      "answer": "Either use an accounting software like Quick Books Online or a spreadsheet. Keep accurate records and receipts. Most importantly, have a separate business account from a personal account. NO co-mingling personal with business!! We recommend either Wells Fargo or Bank of America (not user friendly for credit cards). Credit Unions tend to have more issues with business account."
+    },
+    {
+      "question": "What happens when I own my personal residence with someone other than my spouse?",
+      "answer": "This is actually a very good scenario under current tax law. You have a choice how to divide the Mortgage Interest and Property Taxes for itemized deductions. ... [Full provided text]"
+    },
+    {
+      "question": "Does my business owe the tax, or do I owe the tax?",
+      "answer": "This is another questing we get a lot. The answer is, it depends on your business entity. ... [Full provided text]"
+    }
+  ],
+  "contact": {
+    "intro": "Reach out to J&T Accounting Services for expert assistance.",
+    "phone": "(555) 123-4567",
+    "email": "help@jandtaccounting.com",
+    "address": "123 Main St, Provo, UT 84601",
+    "calendly": "https://calendly.com/placeholder"
+  },
+  "forms": [
+    { "title": "Tax Intake Form", "description": "Client intake form for tax preparation." },
+    { "title": "Bookkeeping Checklist", "description": "Checklist for organizing financial records." }
+  ],
+  "classes": {
+    "intro": "Sign up for our educational classes on tax and business topics."
+  },
+  "news": [
+    {
+      "title": "Welcome to J&T Accounting",
+      "content": "We’re excited to launch our new website, offering expert accounting and tax services.",
+      "date": "2025-07-01"
+    }
+  ],
+  "testimonials": [
+    { "client": "ABC Corp", "text": "J&T saved us thousands on our taxes!" },
+    { "client": "Jane Doe", "text": "Professional and thorough service." }
+  ],
+  "privacy": {
+    "text": "Your privacy is important to us. We protect your data in accordance with applicable laws."
+  }
+}
+

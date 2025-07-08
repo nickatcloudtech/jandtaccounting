@@ -8,6 +8,10 @@ body {
 .navbar-dark .navbar-nav .nav-link {
   color: #ffffff;
 }
+.navbar-dark .navbar-nav .nav-link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #d4a017;
+}
 .jumbotron {
   background-color: #003087;
   color: white;
@@ -21,4 +25,21 @@ body {
 .btn-primary:hover {
   background-color: #b38e14;
   border-color: #b38e14;
+}
+.card {
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+@media (max-width: 576px) {
+  .container {
+    padding: 1rem;
+  }
+  .jumbotron {
+    padding: 1rem;
+  }
+  .card {
+    margin-bottom: 1rem;
+  }
 }

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J&T Accounting Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">J&T Accounting</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link <%= active === 'homepage' ? 'active' : '' %>" href="/"><i class="bi bi-house"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link <%= active === 'about' ? 'active' : '' %>" href="/about"><i class="bi bi-person"></i> About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle <%= active === 'services' ? 'active' : '' %>" href="/services" data-bs-toggle="dropdown"><i class="bi bi-calculator"></i> Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/services#accounting">Accounting</a></li>
+              <li><a class="dropdown-item" href="/services#taxes">Taxes</a></li>
+              <li><a class="dropdown-item" href="/services#business-startup">Business Start-up</a></li>
+              <li><a class="dropdown-item" href="/services#consulting">Consulting</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link <%= active === 'classes' ? 'active' : '' %>" href="/classes"><i class="bi bi-book"></i> Classes</a></li>
+          <li class="nav-item"><a class="nav-link <%= active === 'forms' ? 'active' : '' %>" href="/forms"><i class="bi bi-file-earmark"></i> Forms</a></li>
+          <li class="nav-item"><a class="nav-link <%= active === 'news' ? 'active' : '' %>" href="/news"><i class="bi bi-newspaper"></i> News</a></li>
+          <li class="nav-item"><a class="nav-link <%= active === 'faq' ? 'active' : '' %>" href="/faq"><i class="bi bi-question-circle"></i> FAQ</a></li>
+          <li class="nav-item"><a class="nav-link <%= active === 'contact' ? 'active' : '' %>" href="/contact"><i class="bi bi-envelope"></i> Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.irs.gov"><i class="bi bi-link"></i> IRS</a></li>
+          <li class="nav-item"><a class="nav-link" href="<%= content.contact.calendly %>"><i class="bi bi-lock"></i> Tax Dome</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="/contact"><i class="bi bi-telephone"></i> Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <% if (active === 'homepage') { %>
+      <div class="jumbotron text-center">
+        <h1><%= content.homepage.tagline %></h1>
+        <p><%= content.homepage.intro %></p>
+        <a href="/contact" class="btn btn-primary"><i class="bi bi-telephone"></i> <%= content.homepage.cta %></a>
+      </div>
+    <% } else if (active === 'about') { %>
+      <h1><i class="bi bi-person"></i> About Us</h1>
+      <h3>Mission</h3>
+      <p><%= content.about.mission %></p>
+      <h3>History</h3>
+      <p><%= content.about.history %></p>
+      <h3>Our Team</h3>
+      <div class="row">
+        <% content.about.team.forEach(member => { %>
+          <div class="col-md-6 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= member.name %></h5>
+                <p class="card-text"><%= member.bio %></p>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else if (active === 'services') { %>
+      <h1><i class="bi bi-calculator"></i> Services</h1>
+      <div class="row">
+        <% content.services.forEach(service => { %>
+          <div class="col-md-6 mb-3" id="<%= service.name.toLowerCase().replace(/ /g, '-') %>">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= service.name %></h5>
+                <p class="card-text"><%= service.description %></p>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else if (active === 'classes') { %>
+      <h1><i class="bi bi-book"></i> Classes - Sign Up</h1>
+      <p><%= content.classes.intro %></p>
+      <form action="/submit-class" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Interests</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="realtor" name="interests" value="Realtor">
+            <label class="form-check-label" for="realtor">Realtor</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="rental" name="interests" value="Rental Property">
+            <label class="form-check-label" for="rental">Rental Property</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="crypto" name="interests" value="Crypto">
+            <label class="form-check-label" for="crypto">Crypto</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="entities" name="interests" value="Entities">
+            <label class="form-check-label" for="entities">Entities</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="startup" name="interests" value="Business Start-up">
+            <label class="form-check-label" for="startup">Business Start-up</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="other" name="interests" value="Other">
+            <label class="form-check-label" for="other">Other</label>
+          </div>
+          <div class="mb-3">
+            <label for="otherDetails" class="form-label">Other Details</label>
+            <input type="text" class="form-control" id="otherDetails" name="otherDetails">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Submit</button>
+      </form>
+    <% } else if (active === 'forms') { %>
+      <h1><i class="bi bi-file-earmark"></i> Forms Library</h1>
+      <% content.forms.forEach(form => { %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><%= form.title %></h5>
+            <p class="card-text"><%= form.description %></p>
+            <a href="#" class="btn btn-primary"><i class="bi bi-download"></i> Download</a>
+          </div>
+        </div>
+      <% }) %>
+    <% } else if (active === 'news') { %>
+      <h1><i class="bi bi-newspaper"></i> News</h1>
+      <% content.news.forEach(post => { %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text"><small><%= post.date %></small></p>
+            <p class="card-text"><%= post.content %></p>
+          </div>
+        </div>
+      <% }) %>
+    <% } else if (active === 'faq') { %>
+      <h1><i class="bi bi-question-circle"></i> FAQ</h1>
+      <div class="accordion" id="faqAccordion">
+        <% content.faq.forEach((item, index) => { %>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faqHeading<%= index %>">
+              <button class="accordion-button <%= index === 0 ? '' : 'collapsed' %>" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse<%= index %>">
+                <%= item.question %>
+              </button>
+            </h2>
+            <div id="faqCollapse<%= index %>" class="accordion-collapse collapse <%= index === 0 ? 'show' : '' %>" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <%= item.answer %>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else if (active === 'contact') { %>
+      <h1><i class="bi bi-envelope"></i> Contact Us</h1>
+      <p><%= content.contact.intro %></p>
+      <p><strong>Phone:</strong> <%= content.contact.phone %></p>
+      <p><strong>Email:</strong> <%= content.contact.email %></p>
+      <p><strong>Address:</strong> <%= content.contact.address %></p>
+      <a href="<%= content.contact.calendly %>" class="btn btn-primary mb-3"><i class="bi bi-calendar"></i> Schedule a Consultation</a>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.364297711695!2d-111.66149668461475!3d40.23367687938755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDE0JzAxLjIiTiAxMTPCsDM5JzQwLjQiVw!5e0!3m2!1sen!2sus!4v1631234567890" allowfullscreen></iframe>
+      </div>
+    <% } %>
+  </div>
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2025 J&T Accounting Services, LLC. All rights reserved.</p>
+    <p><a href="/privacy" class="text-white">Privacy Policy</a></p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
