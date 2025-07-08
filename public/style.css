@@ -1,0 +1,24 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+}
+.jumbotron {
+  background-color: #003087;
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+.btn-primary {
+  background-color: #d4a017;
+  border-color: #d4a017;
+}
+.btn-primary:hover {
+  background-color: #b38e14;
+  border-color: #b38e14;
+}
