@@ -2,12 +2,11 @@ const express = require('express');
 const fs = require('fs').promises;
 require('dotenv').config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; // Use Render's port or fallback to 3000
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-// Load content
 async function loadContent() {
   const data = await fs.readFile('content.json', 'utf8');
   return JSON.parse(data);

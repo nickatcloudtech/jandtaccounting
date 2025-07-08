@@ -3,29 +3,11 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "dotenv": "^17.1.0",
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "express-rate-limit": "^7.5.1",
-    "express-session": "^1.18.1",
-    "qrcode": "^1.5.4",
-    "speakeasy": "^2.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nickatcloudtech/jandtaccounting.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nickatcloudtech/jandtaccounting/issues"
-  },
-  "homepage": "https://github.com/nickatcloudtech/jandtaccounting#readme",
-  "description": ""
+    "express": "^4.18.2",
+    "ejs": "^3.1.9",
+    "dotenv": "^16.3.1"
+  }
 }
