@@ -32,155 +32,157 @@
       </div>
     </div>
   </nav>
-  <div class="container mt-5">
-    <% if (active === 'homepage') { %>
-      <div class="position-relative mb-4">
-        <img src="<%= content.homepage.image %>" alt="J&T Accounting Team" class="img-fluid w-100" style="max-height: 400px; object-fit: cover;">
-        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
-          <h2 class="fw-bold">J&T Accounting Services</h2>
+  <div class="d-flex flex-column min-vh-100">
+    <div class="container mt-5 flex-grow-1">
+      <% if (active === 'homepage') { %>
+        <div class="position-relative mb-4">
+          <img src="<%= content.homepage.image %>" alt="J&T Accounting Team" class="img-fluid w-100" style="max-height: 400px; object-fit: cover;">
+          <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+            <h2 class="fw-bold">J&T Accounting Services</h2>
+          </div>
         </div>
-      </div>
-      <div class="text-center mb-4">
-        <img src="/US.jpg" alt="James and Tiffiny" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
-      </div>
-      <div class="text-center">
-        <p class="lead"><%= content.homepage.intro %></p>
-        <a href="/contact" class="btn btn-primary mt-3"> <%= content.homepage.cta %></a>
-      </div>
-    <% } else if (active === 'about') { %>
-      <h1>About Us</h1>
-      <h3>Mission</h3>
-      <p><%= content.about.mission %></p>
-      <h3>History</h3>
-      <p><%= content.about.history %></p>
-      <h3>Our Team</h3>
-      <div class="row">
-        <% content.about.team.forEach(member => { %>
-          <div class="col-md-6 mb-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"><%= member.name %></h5>
-                <p class="card-text"><%= member.bio %></p>
+        <div class="text-center mb-4">
+          <img src="/US.jpg" alt="James and Tiffiny" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+        </div>
+        <div class="text-center">
+          <p class="lead"><%= content.homepage.intro %></p>
+          <a href="/contact" class="btn btn-primary mt-3"> <%= content.homepage.cta %></a>
+        </div>
+      <% } else if (active === 'about') { %>
+        <h1>About Us</h1>
+        <h3>Mission</h3>
+        <p><%= content.about.mission %></p>
+        <h3>History</h3>
+        <p><%= content.about.history %></p>
+        <h3>Our Team</h3>
+        <div class="row">
+          <% content.about.team.forEach(member => { %>
+            <div class="col-md-6 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= member.name %></h5>
+                  <p class="card-text"><%= member.bio %></p>
+                </div>
               </div>
             </div>
-          </div>
-        <% }) %>
-      </div>
-    <% } else if (active === 'services') { %>
-      <h1>Services</h1>
-      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-        <% content.services.forEach(service => { %>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body text-center">
-                <h5 class="card-title"><%= service.name %></h5>
-                <p class="card-text"><%= service.description %></p>
-                <a href="/services#<%= service.name.toLowerCase().replace(/ /g, '-') %>" class="btn btn-primary">Learn More</a>
+          <% }) %>
+        </div>
+      <% } else if (active === 'services') { %>
+        <h1>Services</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+          <% content.services.forEach(service => { %>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <h5 class="card-title"><%= service.name %></h5>
+                  <p class="card-text"><%= service.description %></p>
+                  <a href="/services#<%= service.name.toLowerCase().replace(/ /g, '-') %>" class="btn btn-primary">Learn More</a>
+                </div>
               </div>
             </div>
-          </div>
-        <% }) %>
-      </div>
-    <% } else if (active === 'classes') { %>
-      <h1>Classes - Sign Up</h1>
-      <p><%= content.classes.intro %></p>
-      <form action="/submit-class" method="POST">
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" name="name" required>
+          <% }) %>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="mb-3">
-          <label for="phone" class="form-label">Phone</label>
-          <input type="tel" class="form-control" id="phone" name="phone" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Interests</label>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="realtor" name="interests" value="Realtor">
-            <label class="form-check-label" for="realtor">Realtor</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="rental" name="interests" value="Rental Property">
-            <label class="form-check-label" for="rental">Rental Property</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="crypto" name="interests" value="Crypto">
-            <label class="form-check-label" for="crypto">Crypto</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="entities" name="interests" value="Entities">
-            <label class="form-check-label" for="entities">Entities</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="startup" name="interests" value="Business Start-up">
-            <label class="form-check-label" for="startup">Business Start-up</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="other" name="interests" value="Other">
-            <label class="form-check-label" for="other">Other</label>
+      <% } else if (active === 'classes') { %>
+        <h1>Classes - Sign Up</h1>
+        <p><%= content.classes.intro %></p>
+        <form action="/submit-class" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
           </div>
           <div class="mb-3">
-            <label for="otherDetails" class="form-label">Other Details</label>
-            <input type="text" class="form-control" id="otherDetails" name="otherDetails">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
           </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    <% } else if (active === 'forms') { %>
-      <h1>Forms Library</h1>
-      <% content.forms.forEach(form => { %>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title"><%= form.title %></h5>
-            <p class="card-text"><%= form.description %></p>
-            <a href="#" class="btn btn-primary">Download</a>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
           </div>
-        </div>
-      <% }) %>
-    <% } else if (active === 'news') { %>
-      <h1>News</h1>
-      <% content.news.forEach(post => { %>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title"><%= post.title %></h5>
-            <p class="card-text"><small><%= post.date %></small></p>
-            <p class="card-text"><%= post.content %></p>
+          <div class="mb-3">
+            <label class="form-label">Interests</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="realtor" name="interests" value="Realtor">
+              <label class="form-check-label" for="realtor">Realtor</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="rental" name="interests" value="Rental Property">
+              <label class="form-check-label" for="rental">Rental Property</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="crypto" name="interests" value="Crypto">
+              <label class="form-check-label" for="crypto">Crypto</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="entities" name="interests" value="Entities">
+              <label class="form-check-label" for="entities">Entities</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="startup" name="interests" value="Business Start-up">
+              <label class="form-check-label" for="startup">Business Start-up</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="other" name="interests" value="Other">
+              <label class="form-check-label" for="other">Other</label>
+            </div>
+            <div class="mb-3">
+              <label for="otherDetails" class="form-label">Other Details</label>
+              <input type="text" class="form-control" id="otherDetails" name="otherDetails">
+            </div>
           </div>
-        </div>
-      <% }) %>
-    <% } else if (active === 'faq') { %>
-      <h1>FAQ</h1>
-      <div class="accordion" id="faqAccordion">
-        <% content.faq.forEach((item, index) => { %>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="faqHeading<%= index %>">
-              <button class="accordion-button <%= index === 0 ? '' : 'collapsed' %>" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse<%= index %>">
-                <%= item.question %>
-              </button>
-            </h2>
-            <div id="faqCollapse<%= index %>" class="accordion-collapse collapse <%= index === 0 ? 'show' : '' %>" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                <%= item.answer %>
-              </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      <% } else if (active === 'forms') { %>
+        <h1>Forms Library</h1>
+        <% content.forms.forEach(form => { %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title"><%= form.title %></h5>
+              <p class="card-text"><%= form.description %></p>
+              <a href="#" class="btn btn-primary">Download</a>
             </div>
           </div>
         <% }) %>
-      </div>
-    <% } else if (active === 'contact') { %>
-      <h1>Contact Us</h1>
-      <p><%= content.contact.intro %></p>
-      <p><strong>Phone:</strong> <%= content.contact.phone %></p>
-      <p><strong>Email:</strong> <%= content.contact.email %></p>
-      <p><strong>Address:</strong> <%= content.contact.address %></p>
-      <a href="<%= content.contact.calendly %>" class="btn btn-primary mb-3">Schedule a Consultation</a>
-      <div class="ratio ratio-16x9">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.364297711695!2d-111.66149668461475!3d40.23367687938755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDE0JzAxLjIiTiAxMTPCsDM5JzQwLjQiVw!5e0!3m2!1sen!2sus!4v1631234567890" allowfullscreen></iframe>
-      </div>
-    <% } %>
+      <% } else if (active === 'news') { %>
+        <h1>News</h1>
+        <% content.news.forEach(post => { %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title"><%= post.title %></h5>
+              <p class="card-text"><small><%= post.date %></small></p>
+              <p class="card-text"><%= post.content %></p>
+            </div>
+          </div>
+        <% }) %>
+      <% } else if (active === 'faq') { %>
+        <h1>FAQ</h1>
+        <div class="accordion" id="faqAccordion">
+          <% content.faq.forEach((item, index) => { %>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeading<%= index %>">
+                <button class="accordion-button <%= index === 0 ? '' : 'collapsed' %>" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse<%= index %>">
+                  <%= item.question %>
+                </button>
+              </h2>
+              <div id="faqCollapse<%= index %>" class="accordion-collapse collapse <%= index === 0 ? 'show' : '' %>" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <%= item.answer %>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      <% } else if (active === 'contact') { %>
+        <h1>Contact Us</h1>
+        <p><%= content.contact.intro %></p>
+        <p><strong>Phone:</strong> <%= content.contact.phone %></p>
+        <p><strong>Email:</strong> <%= content.contact.email %></p>
+        <p><strong>Address:</strong> <%= content.contact.address %></p>
+        <a href="<%= content.contact.calendly %>" class="btn btn-primary mb-3">Schedule a Consultation</a>
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.364297711695!2d-111.66149668461475!3d40.23367687938755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDE0JzAxLjIiTiAxMTPCsDM5JzQwLjQiVw!5e0!3m2!1sen!2sus!4v1631234567890" allowfullscreen></iframe>
+        </div>
+      <% } %>
+    </div>
   </div>
   <footer class="bg-dark text-white text-center py-3 mt-auto" style="position: fixed; bottom: 0; width: 100%;">
     <p>© 2025 J&T Accounting Services, LLC. All rights reserved.</p>

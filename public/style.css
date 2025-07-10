@@ -5,6 +5,9 @@ body {
   background-color: #F5F6F5;
   color: #1A2A44;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
@@ -99,7 +102,8 @@ body {
 footer {
   background-color: #1A2A44;
   padding: 2rem;
-  margin-top: 3rem;
+  margin-top: auto;
+  flex-shrink: 0; /* Prevent footer from shrinking */
 }
 
 footer a {
@@ -118,11 +122,14 @@ footer a:hover {
 
 .container {
   animation: fadeIn 1s ease-in;
+  flex: 1 0 auto; /* Grow but not shrink */
+  padding-bottom: 8rem; /* Increased padding for mobile */
 }
 
 @media (max-width: 576px) {
   .container {
     padding: 1rem;
+    padding-bottom: 10rem; /* More padding for mobile to clear footer */
   }
   .jumbotron {
     padding: 1.5rem;
@@ -136,11 +143,21 @@ footer a:hover {
   .card {
     margin-bottom: 1rem;
   }
+  footer {
+    position: relative; /* Static on mobile, no overlap */
+    margin-top: 2rem;
+    padding: 1rem;
+  }
 }
 
 @media (min-width: 768px) {
   .container {
     max-width: 900px;
+  }
+  footer {
+    position: fixed; /* Back to fixed on larger screens */
+    bottom: 0;
+    width: 100%;
   }
 }
 
